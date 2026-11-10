@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venta de Celulares | Catálogo</title>
+  <meta name="description" content="Catálogo de celulares nuevos con garantía. Consulta precios, especificaciones y compra por WhatsApp.">
+  <meta property="og:title" content="Venta de Celulares | Catálogo">
+  <meta property="og:description" content="Celulares nuevos con garantía. Consulta precios y compra por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2e1065">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="progreso" id="progreso"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo"><span class="logo__icono">◆</span> <span class="js-nombre">Venta de Celulares</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="nav">
+        <a href="#catalogo" class="nav__link nav__link--activo">Catálogo</a>
+        <a href="#comprar" class="nav__link">¡Quiero comprar!</a>
+        <a href="#terminos" class="nav__link">Términos y condiciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__brillo hero__brillo--1"></div>
+    <div class="hero__brillo hero__brillo--2"></div>
+    <div class="hero__brillo hero__brillo--3"></div>
+    <div class="container hero__grid">
+      <div class="hero__contenido">
+        <span class="hero__etiqueta"><span class="punto-vivo"></span> Equipos nuevos · Garantía de 12 meses</span>
+        <h1 class="hero__titulo js-nombre">Venta de Celulares</h1>
+        <p class="hero__texto">Encuentra el celular ideal para <span class="palabra" id="palabraRotativa">tomar fotos</span></p>
+        <div class="hero__botones">
+          <a href="#catalogo" class="btn btn--blanco btn--brillo">Ver catálogo →</a>
+          <a href="#comprar" class="btn btn--contorno">¿Cómo comprar?</a>
+        </div>
+        <ul class="hero__datos">
+          <li><strong data-contar id="totalModelos">0</strong><span>modelos</span></li>
+          <li><strong data-contar id="totalMarcas">0</strong><span>marcas</span></li>
+          <li><strong data-contar data-final="12">0</strong><span>meses de garantía</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="tel tel--atras"><div class="tel__pantalla tel__pantalla--b"></div></div>
+        <div class="tel tel--frente"><div class="tel__pantalla"><span class="tel__hora">10:41</span><span class="tel__app"></span><span class="tel__app"></span><span class="tel__app"></span><span class="tel__app"></span></div></div>
+        <div class="flotante flotante--1">🔋 <b>5000 mAh</b></div>
+        <div class="flotante flotante--2">📷 <b>108 MP</b></div>
+        <div class="flotante flotante--3">🛡️ <b>Garantía</b></div>
+      </div>
+    </div>
+    <a href="#catalogo" class="hero__scroll" aria-label="Bajar"><span></span></a>
+  </section>
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section class="beneficios" id="beneficios">
+    <div class="container beneficios__grid">
+      <div class="beneficio revelar"><span class="beneficio__icono">🛡️</span><div><strong>Garantía</strong><p>12 meses en equipos nuevos</p></div></div>
+      <div class="beneficio revelar"><span class="beneficio__icono">💳</span><div><strong>Varias formas de pago</strong><p>Efectivo, transferencia y tarjeta</p></div></div>
+      <div class="beneficio revelar"><span class="beneficio__icono">🚚</span><div><strong>Envíos</strong><p>A domicilio o entrega en tienda</p></div></div>
+      <div class="beneficio revelar"><span class="beneficio__icono">💬</span><div><strong>Atención directa</strong><p>Te asesoramos por WhatsApp</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===== MARCAS (cinta animada) ===== -->
+  <div class="marcas"><div class="marcas__pista" id="marcasPista"></div></div>
+
+  <!-- ===== ENCUENTRA TU IDEAL ===== -->
+  <section class="seccion seccion--pegada" id="ideal">
+    <div class="container">
+      <div class="seccion__titulo revelar">
+        <span class="seccion__pre">¿No sabes cuál elegir?</span>
+        <h2>Dinos qué buscas</h2>
+        <p class="seccion__sub">Toca una opción y te mostramos los modelos que mejor te quedan.</p>
+      </div>
+      <div class="usos" id="usos"></div>
+    </div>
+  </section>
+
+  <!-- ===== OFERTAS ===== -->
+  <section class="seccion seccion--ofertas" id="ofertas" hidden>
+    <div class="container">
+      <div class="ofertas__cabecera revelar">
+        <div>
+          <span class="seccion__pre">Precios especiales</span>
+          <h2 class="titulo-izq">🔥 Ofertas del momento</h2>
+        </div>
+        <div class="flechas">
+          <button class="flecha" data-mover="-1" aria-label="Anterior">←</button>
+          <button class="flecha" data-mover="1" aria-label="Siguiente">→</button>
+        </div>
+      </div>
+      <div class="carrusel" id="carrusel"></div>
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO ===== -->
+  <main id="catalogo" class="seccion">
+    <div class="container">
+      <div class="seccion__titulo revelar">
+        <span class="seccion__pre">Catálogo</span>
+        <h2>Elige tu próximo celular</h2>
+      </div>
+
+      <div class="toolbar">
+        <div class="buscador">
+          <span>🔍</span>
+          <input type="search" id="buscador" placeholder="Buscar por modelo o marca..." aria-label="Buscar">
+        </div>
+        <select id="orden" aria-label="Ordenar">
+          <option value="">Ordenar: destacados</option>
+          <option value="asc">Precio: menor a mayor</option>
+          <option value="desc">Precio: mayor a menor</option>
+        </select>
+      </div>
+      <div id="filtros" class="filtros"></div>
+      <div id="usoActivo" class="uso-activo" hidden></div>
+
+      <p id="estado" class="estado">Cargando catálogo...</p>
+      <div id="grid" class="grid"></div>
+    </div>
+  </main>
+
+  <!-- ===== CÓMO COMPRAR ===== -->
+  <section id="comprar" class="seccion seccion--oscura">
+    <div class="container">
+      <div class="seccion__titulo">
+        <span class="seccion__pre">¡Quiero comprar!</span>
+        <h2>Comprar es así de fácil</h2>
+      </div>
+      <ol class="pasos">
+        <li class="paso revelar"><span class="paso__num">1</span><h3>Elige tu equipo</h3><p>Revisa el catálogo, compara modelos y encuentra el ideal para ti.</p></li>
+        <li class="paso revelar"><span class="paso__num">2</span><h3>Escríbenos</h3><p>Da clic en “Lo quiero” y te atendemos por WhatsApp para confirmar existencia.</p></li>
+        <li class="paso revelar"><span class="paso__num">3</span><h3>Paga o aparta</h3><p>Liquida o aparta con un anticipo usando el método que prefieras.</p></li>
+        <li class="paso revelar"><span class="paso__num">4</span><h3>Recíbelo</h3><p>Recógelo en tienda o te lo enviamos a domicilio.</p></li>
+      </ol>
+      <div class="info-compra revelar">
+        <div><h4>Formas de pago</h4><div id="metodosPago" class="chips"></div></div>
+        <div><h4>Entregas</h4><div id="entregas" class="chips"></div></div>
+        <div><h4>Horario</h4><p id="horario"></p><p id="direccion" class="texto-sec"></p></div>
+      </div>
+      <div class="centro">
+        <a class="btn btn--whats js-whats-general" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TÉRMINOS ===== -->
+  <section id="terminos" class="seccion">
+    <div class="container container--angosto">
+      <div class="seccion__titulo">
+        <span class="seccion__pre">Términos y condiciones</span>
+        <h2>Compra con confianza</h2>
+      </div>
+      <div id="listaTerminos" class="acordeon revelar"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo"><span class="logo__icono">◆</span> <span class="js-nombre">Venta de Celulares</span></span>
+      <nav>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#comprar">¡Quiero comprar!</a>
+        <a href="#terminos">Términos</a>
+      </nav>
+      <small>© <span id="anio"></span> <span class="js-nombre">Venta de Celulares</span></small>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="whats-flotante js-whats-general" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.44 9.42zm8.03-17.46A11.27 11.27 0 0 0 12.04.72C5.78.72.7 5.8.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.34-5.08 11.34-11.33 0-3.03-1.18-5.87-3.32-8.02z"/></svg>
+  </a>
+
+  <!-- Barra del comparador -->
+  <div class="comparar-barra" id="compararBarra" hidden>
+    <span id="compararTexto">0 seleccionados</span>
+    <button class="btn btn--blanco btn--chico" id="btnComparar">Comparar</button>
+    <button class="btn-link" id="btnLimpiar">Limpiar</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal__fondo" data-cerrar></div>
+    <div class="modal__caja" role="dialog" aria-modal="true">
+      <button class="modal__cerrar" data-cerrar aria-label="Cerrar">✕</button>
+      <div id="modalContenido"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+marca,modelo,precio,precio_anterior,procesador,ram,almacenamiento,camara,bateria,pantalla,color,foto,descripcion,etiqueta,disponible
+OPPO,A54,3499,3999,Helio P35,4 GB,128 GB,13 MP + 2 MP + 2 MP,5000 mAh,"6.51"" HD+",Azul,,Batería para todo el día y triple cámara con IA.,Oferta,si
+Apple,iPhone 15,15999,,A16 Bionic,6 GB,128 GB,48 MP + 12 MP,3349 mAh,"6.1"" OLED",Negro,,"Dynamic Island, USB-C y cámara principal de 48 MP.",Nuevo,si
+Samsung,Galaxy A55,7999,8999,Exynos 1480,8 GB,256 GB,50 MP + 12 MP + 5 MP,5000 mAh,"6.6"" AMOLED 120 Hz",Lila,,"Diseño en metal y cristal, resistente al agua IP67.",Oferta,si
+Xiaomi,Redmi Note 13,4999,,Snapdragon 685,8 GB,256 GB,108 MP + 8 MP + 2 MP,5000 mAh,"6.67"" AMOLED 120 Hz",Verde,,Cámara de 108 MP y carga rápida de 33 W.,,si
+Motorola,Moto G84,5499,,Snapdragon 695,12 GB,256 GB,50 MP + 8 MP,5000 mAh,"6.55"" pOLED",Magenta,,12 GB de RAM y pantalla pOLED de 120 Hz.,,no
